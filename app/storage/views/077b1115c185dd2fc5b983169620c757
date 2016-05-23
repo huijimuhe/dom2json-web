@@ -1,0 +1,48 @@
+<?php $__env->startSection('title'); ?>
+TEST
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+
+<div class="row ">  
+    <?php echo Form::open(['route' => 'postTest', 'method' => 'post', 'files' => true]); ?> 
+    <div class="col-lg-12">    
+        <div class="box">
+            <div class="box-header">  
+            </div><!-- /.box-header -->
+            <div class="box-body pad">    
+                <div class="form-group">
+                    <script type="text/plain" id="myEditor" name="short" style="width:1000px;height:240px;">
+                        <p>text1</p>
+                    </script> 
+                </div> 
+
+            </div>
+            <div class="box-footer">
+                <?php echo Form::submit('确定', array('class' => 'btn btn-lg btn-primary btn-block')); ?> 
+            </div>
+        </div>
+        <!-- general form elements --> 
+        <?php echo Form::close(); ?> 
+    </div>
+    <?php $__env->stopSection(); ?>
+    <?php $__env->startSection('scripts'); ?>
+    <script type="text/javascript" charset="utf-8" src="<?php echo asset('public/plugins/plupload/plupload.full.min.js'); ?>"></script>
+    <script type="text/javascript" charset="utf-8" src="<?php echo asset('public/plugins/plupload/i18n/zh_CN.js'); ?>"></script>
+    <script type="text/javascript" charset="utf-8" src="<?php echo asset('public/plugins/qiniu/qiniu.min.js'); ?>"></script>
+    <script type="text/javascript" charset="utf-8" src="<?php echo asset('public/plugins/qiniu/qiniu.progress2.js?v=1'); ?>"></script> 
+    <!-- umeditor-->
+    <script src="<?php echo asset('public/plugins/umeditor/umeditor.config.js'); ?>"></script>   
+    <script src="<?php echo asset('public/plugins/umeditor/umeditor.min.js'); ?>"></script>   
+    <script type="text/javascript">
+$(function() {
+    var um = UM.getEditor('myEditor', {
+        toolbar: ['undo redo | bold italic underline | image']
+    });
+    //7niu-上传图片
+    uploadImg('img', '<?php echo route('oss.token'); ?>');
+});
+
+    </script>
+    <?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout.default', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
