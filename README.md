@@ -23,4 +23,8 @@ I can't figure out how to combine mulit images to one array(like 鲜城APP).Mayb
 
 you can find android demostration [here](https://github.com/huijimuhe/dom2json-android)
 
-you can find ios demostration [here](https://github.com/huijimuhe/dom2json-ios)
+you can find ios demostration [here](https://github.com/huijimuhe/dom2json-ios)\
+
+##extra
+
+有兴趣的请来qq群533838427一起聊聊人生
